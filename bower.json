@@ -1,0 +1,29 @@
+{
+  "name": "jquery-ajax-utility",
+  "version": "1.0.1",
+  "homepage": "https://github.com/geocrest/jquery-ajax-utility",
+  "authors": [
+    "Geocrest Mapping, LLC"
+  ],
+  "description": "Provides some functionality for displaying Bootstrap alert messages when working with jQuery Ajax methods and, in particular, ASP.NET MVC Ajax forms.",
+  "main": "ajax-utility.js",
+  "moduleType": [
+    "amd",
+    "globals"
+  ],
+  "keywords": [
+    "asp.net mvc",
+    "unobtrusive",
+    "ajax",
+    "bootstrap",
+    "alert"
+  ],
+  "license": "GPL v2.0",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
