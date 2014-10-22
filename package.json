@@ -1,15 +1,16 @@
 {
-  "name": "jquery-ajax-utility",
+  "name": "jquery-ajax-alerts",
   "version": "1.0.1",
   "description": "Provides some functionality for displaying Bootstrap alert messages when working with jQuery Ajax methods and, in particular, ASP.NET MVC Ajax forms.",
-  "main": "ajax-utility.js",
+  "main": "src/js/ajax-alerts.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/geocrest/jquery-ajax-utility.git"
+    "url": "https://github.com/geocrest/jquery-ajax-alerts.git"
   },
   "keywords": [
     "asp.net mvc",
     "unobtrusive",
+    "jquery",
     "ajax",
     "bootstrap",
     "alert"
@@ -17,13 +18,17 @@
   "author": "Geocrest Mapping, LLC",
   "license": "GPL v2.0",
   "bugs": {
-    "url": "https://github.com/geocrest/jquery-ajax-utility/issues"
+    "url": "https://github.com/geocrest/jquery-ajax-alerts/issues"
   },
-  "homepage": "https://github.com/geocrest/jquery-ajax-utility",
+  "homepage": "https://github.com/geocrest/jquery-ajax-alerts",
   "devDependencies": {
     "grunt": "^0.4.5",
+    "grunt-contrib-clean": "^0.6.0",
     "grunt-contrib-cssmin": "^0.10.0",
     "grunt-contrib-requirejs": "^0.4.4",
-    "grunt-nuget": "^0.1.4"
+    "grunt-jsdoc": "^0.5.7",
+    "grunt-nuget": "^0.1.4",
+    "ink-docstrap": "^0.4.12",
+    "jsdoc": "^3.3.0-alpha9"
   }
 }

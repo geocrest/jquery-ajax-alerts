@@ -1,23 +1,28 @@
-﻿/*! Utility script for working with ASP.NET MVC Ajax forms
+﻿/*! Provides some functionality for displaying Bootstrap alert messages when working with jQuery Ajax methods and, in particular, ASP.NET MVC Ajax forms.
  * 
- * Geocrest.Web.AjaxUtility v1.0.1 (https://github.com/geocrest/jquery-ajax-utility)
+ * Geocrest.Web.AjaxAlerts v1.0.1 (https://github.com/geocrest/jquery-ajax-alerts)
  * Copyright 2013, 2014 Geocrest Mapping, LLC.
- * Licensed under GPL v2.0 (https://github.com/geocrest/jquery-ajax-utility/blob/master/LICENSE)
+ * Licensed under GPL v2.0 (https://github.com/geocrest/jquery-ajax-alerts/blob/master/LICENSE)
  *
  */
 (function (root, factory) {
     if (typeof define === 'function' && define.amd) {
         define(['jquery'], function ($) {
-            root.AjaxUtility = factory($);
+            root.AjaxAlerts = factory($);
         });
     } else {
-        root.AjaxUtility = factory(root.$);
+        root.AjaxAlerts = factory(root.$);
     }
 }(this, function ($) {
-    var ajaxUtilityElementId = 'ajaxresult';
-    if ($.fn.alert == null) throw new Error('AjaxUtility requires the Bootstrap Alert plugin.');
+    var ajaxResultElementId = 'ajaxresult';
+    if ($.fn.alert == null) throw new Error('AjaxAlerts requires the Bootstrap Alert plugin.');
     var bootstrapVersion = $.fn.alert.Constructor.VERSION;
-    var AjaxUtility = {
+    /**
+     * The global Ajax Alerts object.
+     * @module AjaxAlerts
+     */
+    var exports =
+    {
         VERSION: '1.0.1',
         /** Displays a success message within an alert
          * @param {object} a - a JSON object returned from the server containing a boolean value
@@ -28,24 +33,22 @@
          * @param {string} [d] - the jQuery selector of the submit button element.
          */
         onSuccess: function (a, b, c, d) {
-            var $container = addContainer(ajaxUtilityElementId);
+            var $container = addContainer(ajaxResultElementId);
             $(d).button('reset');
             if (a.success) {
                 $(c).modal('hide');
                 $(b).html(a.content);
-                $container.append(a.message)
+                $container.html(addClose() + a.message)
                     .addClass('alert alert-success fade in')
-                    .alert()
-                    .one(bootstrapVersion ? 'closed.bs.alert' : 'closed', emptyAlert);
+                    .alert();
                 setTimeout(function () {
                     $container.alert('close');
                 }, 5000);
             }
             else {
-                $container.append(a.message)
+                $container.html(addClose() + a.message)
                     .addClass('alert alert-error fade in')
-                    .alert()
-                    .one(bootstrapVersion ? 'closed.bs.alert' : 'closed', emptyAlert);
+                    .alert();
             }
         },
         /** Removes an element from the DOM after it has been deleted. 
@@ -55,23 +58,21 @@
          * @param {string} b - the jQuery selector of the element to remove from display (e.g. '#row3').
          */
         onDelete: function (a, b) {
-            var $container = addContainer(ajaxUtilityElementId);
+            var $container = addContainer(ajaxResultElementId);
             if (a.success) {
                 $(b).fadeOut(1000, function () {
-                    $container.append(a.message)
+                    $container.html(addClose() + a.message)
                         .addClass('alert alert-success fade in')
-                        .alert()
-                        .one(bootstrapVersion ? 'closed.bs.alert' : 'closed', emptyAlert);
+                        .alert();
                     setTimeout(function () {
                         $container.alert('close');
                     }, 5000);
                 });
             }
             else {
-                $container.append(a.message)
+                $container.html(addClose() + a.message)
                     .addClass('alert alert-error fade in')
-                    .alert()
-                    .one(bootstrapVersion ? 'closed.bs.alert' : 'closed', emptyAlert);
+                    .alert();
             }
         },
         /** Displays an alert with a failure message.
@@ -81,16 +82,16 @@
          * @param {string} d - the jQuery selector of the submit button element.
          */
         onFailure: function (a, b, c, d) {
-            var $container = addContainer(ajaxUtilityElementId);
+            var $container = addContainer(ajaxResultElementId);
             $(d).button('reset');
-            $container.append(c)
+            $container.html(addClose() + c)
                 .addClass('alert alert-error fade in')
-                .alert()
-                .one(bootstrapVersion ? 'closed.bs.alert' : 'closed', emptyAlert);
+                .alert();
         },
-        /* parameter a is the XMLHttpRequest object. 
-           parameter b is the status of the request.
-           */
+        /** Hides all tooltips after the Ajax operation completes.
+         * @param {object} a - the XMLHttpRequest object. 
+         * @param {string} b - the status of the request.
+         */
         onComplete: function (a, b) {
             $().tooltip('hide');
         },
@@ -99,31 +100,27 @@
          * @param {string} b - the jQuery selector of the button element.
          */
         onBegin: function (a, b) {
-            var $container = addContainer(ajaxUtilityElementId);
+            var $container = addContainer(ajaxResultElementId);
             $(b).button('loading');
             $container.removeClass('in');
         }
     };
-    /** Removes the content from the alert */
-    function emptyAlert() {
-        var $container = addContainer(ajaxUtilityElementId);
-        $container.remove();
+
+    /** Adds a close button to the alert message */
+    function addClose() {
+        return "<button type='button' class='close' data-dismiss='alert'>&times;</button>";
     }
-    ///** Adds a close button to the alert message */
-    //function addClose() {
-    //    return "<button type='button' class='close' data-dismiss='alert'>&times;</button>";
-    //}
     /** Adds the element to the DOM that will hold the alert messages.
      * @param {string} id - the element id for the messages.
      */
     function addContainer(id) {
         var container = $('#' + id);
         if (container.length === 0) {
-            $('body').append("<div id='" + id + "' class='alert fade'><button type='button' class='close' data-dismiss='alert'>&times;</button></div>");
+            $('body').append("<div id='" + id + "' class='alert fade alert-dismissable'></div>");
             return $('#' + id);
         } else {
             return container;
         }
     }
-    return AjaxUtility;
+    return exports;
 }));

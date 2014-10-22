@@ -1,4 +1,4 @@
-jquery-ajax-utility
+jquery-ajax-alerts
 ================
 
 Provides some functionality for displaying Bootstrap alert messages when working with jQuery Ajax methods and, in particular, ASP.NET MVC Ajax forms. Contains a single CSS stylesheet and a simple JavaScript file. When using with an ASP.NET MVC project you can add these files to your page using a bundle or by simply adding them to the page.
@@ -15,10 +15,10 @@ _POST_
     @using (Ajax.BeginForm("create", "somecontroller", new { area = "admin" }, new AjaxOptions 
     {
         HttpMethod = "Post",
-        OnSuccess = "AjaxUtility.onSuccess(data, '#mylist', '#mymodal', '#btnSave')",
-        OnFailure = "AjaxUtility.onFailure(xhr, status, error, '#btnSave')",
-        OnBegin = "AjaxUtility.onBegin(xhr, '#btnSave')",
-        OnComplete = "AjaxUtility.onComplete"
+        OnSuccess = "AjaxAlerts.onSuccess(data, '#mylist', '#mymodal', '#btnSave')",
+        OnFailure = "AjaxAlerts.onFailure(xhr, status, error, '#btnSave')",
+        OnBegin = "AjaxAlerts.onBegin(xhr, '#btnSave')",
+        OnComplete = "AjaxAlerts.onComplete"
     }, new { @class = "form-horizontal" }))
     {
         // your form content here
@@ -30,10 +30,10 @@ _DELETE_
     {
     	HttpMethod = "Delete",
         Confirm = "Delete this record? Are you sure?",
-        OnSuccess = string.Format("AjaxUtility.onDelete(data, '#row-{0}')", item.Code),
-        OnFailure = "AjaxUtility.onFailure(xhr, status, error, '')",
-        OnBegin = "AjaxUtility.onBegin(xhr, '')",
-        OnComplete = "AjaxUtility.onComplete"
+        OnSuccess = string.Format("AjaxAlerts.onDelete(data, '#row-{0}')", item.Code),
+        OnFailure = "AjaxAlerts.onFailure(xhr, status, error, '')",
+        OnBegin = "AjaxAlerts.onBegin(xhr, '')",
+        OnComplete = "AjaxAlerts.onComplete"
     }, new { style = "display:inline;" }))
     {
     	// your form content here
@@ -44,10 +44,10 @@ _PUT_
 	@using (Ajax.BeginForm("edit", "somecontroller", new { area = "admin" }, new AjaxOptions
     {
     	HttpMethod = "Put",
-        OnSuccess = "AjaxUtility.onSuccess(data, '', '', '#btnSave')",
-        OnFailure = "AjaxUtility.onFailure(xhr, status, error, '#btnSave')",
-        OnBegin = "AjaxUtility.onBegin(xhr, '#btnSave')",
-        OnComplete = "AjaxUtility.onComplete"
+        OnSuccess = "AjaxAlerts.onSuccess(data, '', '', '#btnSave')",
+        OnFailure = "AjaxAlerts.onFailure(xhr, status, error, '#btnSave')",
+        OnBegin = "AjaxAlerts.onBegin(xhr, '#btnSave')",
+        OnComplete = "AjaxAlerts.onComplete"
     }, new { @class = "form-horizontal" }))
     {
     	// your form content here
