@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>jQuery Ajax Alerts Index</title>
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
+
+	<link type="text/css" rel="stylesheet" href="styles/site.cosmo.css">
+
+</head>
+
+<body>
+<div class="container-fluid">
+	<div class="navbar navbar-fixed-top navbar-inverse">
+		<div class="navbar-inner">
+			<a class="brand" href="index.html">jQuery Ajax Alerts</a>
+			<ul class="nav">
+				
+				<li class="dropdown">
+					<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b
+						class="caret"></b></a>
+
+					<ul class="dropdown-menu ">
+						
+						<li>
+							<a href="module-AjaxAlerts.html">AjaxAlerts</a>
+						</li>
+						
+
+					</ul>
+				</li>
+				
+			</ul>
+		</div>
+	</div>
+
+	<div class="row-fluid">
+
+		
+		<div class="span8">
+			
+				<div id="main">
+					
+
+
+	
+	<span class="page-title">Index</span>
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+
+
+
+
+
+    <section class="readme-section">
+        <article><h1>jquery-ajax-alerts</h1>
+<p>Provides some functionality for displaying Bootstrap alert messages when working with jQuery Ajax methods and, in particular, ASP.NET MVC Ajax forms. Contains a single CSS stylesheet and a simple JavaScript file. When using with an ASP.NET MVC project you can add these files to your page using a bundle or by simply adding them to the page.</p>
+<p><a href="http://samples.jeffgalang.net/feedback">Demo</a></p>
+<h2>Usage</h2>
+<p><strong>Markup</strong> - when using the <a href="http://msdn.microsoft.com/en-us/library/system.web.mvc.ajax.ajaxextensions.beginform(v=vs.118).aspx">BeginForm</a> extension method you can specify the utility methods in the form's parameters like below. In the <em>POST</em> method below the following items are optional:</p>
+<ul>
+<li><code>#mylist</code> refers to an element that will render new content (in this case a partial view containing a table listing all items including the newly _POST_ed  item. </li>
+<li><code>#mymodal</code> refers to the id of a Bootstrap modal to hide after the form is submitted (in the case where the form is displayed within a modal).</li>
+<li><code>#btnSave</code> refers to the button used to submit the form. The button will switch to and from it's loading state before and after the form is submitted.</li>
+</ul>
+<p><em>POST</em></p>
+<pre><code>@using (Ajax.BeginForm(&quot;create&quot;, &quot;somecontroller&quot;, new { area = &quot;admin&quot; }, new AjaxOptions 
+{
+    HttpMethod = &quot;Post&quot;,
+    OnSuccess = &quot;AjaxAlerts.onSuccess(data, '#mylist', '#mymodal', '#btnSave')&quot;,
+    OnFailure = &quot;AjaxAlerts.onFailure(xhr, status, error, '#btnSave')&quot;,
+    OnBegin = &quot;AjaxAlerts.onBegin(xhr, '#btnSave')&quot;,
+    OnComplete = &quot;AjaxAlerts.onComplete&quot;
+}, new { @class = &quot;form-horizontal&quot; }))
+{
+    // your form content here
+}</code></pre>
+<p><em>DELETE</em></p>
+<pre><code>@using (Ajax.BeginForm(&quot;delete&quot;, &quot;somecontroller&quot;, new { area = &quot;admin&quot; }, new AjaxOptions
+{
+    HttpMethod = &quot;Delete&quot;,
+    Confirm = &quot;Delete this record? Are you sure?&quot;,
+    OnSuccess = string.Format(&quot;AjaxAlerts.onDelete(data, '#row-{0}')&quot;, item.Code),
+    OnFailure = &quot;AjaxAlerts.onFailure(xhr, status, error, '')&quot;,
+    OnBegin = &quot;AjaxAlerts.onBegin(xhr, '')&quot;,
+    OnComplete = &quot;AjaxAlerts.onComplete&quot;
+}, new { style = &quot;display:inline;&quot; }))
+{
+    // your form content here
+}</code></pre>
+<p><em>PUT</em></p>
+<pre><code>@using (Ajax.BeginForm(&quot;edit&quot;, &quot;somecontroller&quot;, new { area = &quot;admin&quot; }, new AjaxOptions
+{
+    HttpMethod = &quot;Put&quot;,
+    OnSuccess = &quot;AjaxAlerts.onSuccess(data, '', '', '#btnSave')&quot;,
+    OnFailure = &quot;AjaxAlerts.onFailure(xhr, status, error, '#btnSave')&quot;,
+    OnBegin = &quot;AjaxAlerts.onBegin(xhr, '#btnSave')&quot;,
+    OnComplete = &quot;AjaxAlerts.onComplete&quot;
+}, new { @class = &quot;form-horizontal&quot; }))
+{
+    // your form content here
+}</code></pre>
+<p><strong>Server-side</strong> - Each action method associated with a form should return a JSON object containing the following properties:</p>
+<p><em>POST</em>, <em>PUT</em></p>
+<pre><code>{
+  &quot;success&quot;: &lt;boolean&gt;, // whether operation was successful
+  &quot;message&quot;: &lt;string&gt;, // success/failure message
+  &quot;content&quot;: &lt;string&gt; // HTML markup to render in the page
+}</code></pre>
+<p><em>DELETE</em></p>
+<pre><code>{
+  &quot;success&quot;: &lt;boolean&gt;, // whether operation was successful
+  &quot;message&quot;: &lt;string&gt;, // success/failure message
+  &quot;id&quot;: &lt;int&gt;&lt;string&gt;&lt;guid&gt; // the Id of the item that was deleted 
+}</code></pre>
+<p><em>Examples</em>: the following is just a sample; the important thing to notice is the use of the <a href="http://msdn.microsoft.com/en-us/library/dd504936(v=vs.118).aspx">Json</a> method to return a <a href="http://msdn.microsoft.com/en-us/library/system.web.mvc.jsonresult(v=vs.118).aspx">JsonResult</a>.</p>
+<pre><code>[HttpPut]
+[ValidateAntiForgeryToken]
+public virtual ActionResult Edit(T model)
+{
+    if (ModelState.IsValid)
+    {
+        try
+        {
+            this.Repository.Update&lt;T&gt;(model);
+            this.Repository.Save();
+            return Json(new
+            {
+                success = true,
+                message = string.Format(geocrest.web.resources.FormMessages.PutSuccess, &quot;model&quot;),
+                content = this.RenderPartialViewToString(&quot;list&quot;, this.Repository.All&lt;T&gt;().ToList())
+            });
+        }
+        catch (System.Exception ex)
+        {
+            return Json(new
+            {
+                success = false,
+                message = string.Format(geocrest.web.resources.FormMessages.PutFailure, &quot;model&quot;, ex.Message)
+            });
+        }
+    }
+    return Json(new
+    {
+        success = false,
+        message = string.Join(&quot;; &quot;, ModelState.Values.SelectMany(x =&gt; x.Errors.Select(e =&gt; e.Exception.Message)))
+    });
+}</code></pre>
+<p>In case you're interested in the <code>RenderPartialViewToString</code> method:</p>
+<pre><code>/// &lt;summary&gt;
+/// Renders the partial view as a string.
+/// &lt;/summary&gt;
+/// &lt;param name=&quot;viewName&quot;&gt;Name of the view.&lt;/param&gt;
+/// &lt;param name=&quot;model&quot;&gt;The model.&lt;/param&gt;
+/// &lt;returns&gt;A string containing the rendered HTML.&lt;/returns&gt;
+public string RenderPartialViewToString(string viewName, object model)
+{
+    this.ViewData.Model = model;
+    try
+    {
+        using (StringWriter sw = new StringWriter())
+        {
+            ViewEngineResult viewResult = ViewEngines.Engines.FindPartialView(this.ControllerContext, viewName);
+            ViewContext viewContext = new ViewContext(this.ControllerContext, viewResult.View, this.ViewData, this.TempData, sw);
+            viewResult.View.Render(viewContext, sw);
+
+            return sw.GetStringBuilder().ToString();
+        }
+    }
+    catch (System.Exception ex)
+    {
+        return ex.ToString();
+    }
+}</code></pre></article>
+    </section>
+
+
+
+
+
+
+
+				</div>
+
+				<div class="clearfix"></div>
+				<footer>
+					
+					
+		<span class="copyright">
+		Geocrest Mapping, LLC
+		</span>
+					<br />
+					
+		<span class="jsdoc-message">
+		Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a>
+		on Mon Oct 27th 2014 using the <a
+			href="https://github.com/terryweiss/docstrap">DocStrap template</a>.
+		</span>
+				</footer>
+			</div>
+
+			
+			<div class="span3">
+				<div id="toc"></div>
+			</div>
+			
+			<br clear="both">
+		</div>
+
+	</div>
+	<!--<script src="scripts/sunlight.js"></script>-->
+	<script src="scripts/docstrap.lib.js"></script>
+	<script src="scripts/bootstrap-dropdown.js"></script>
+	<script src="scripts/toc.js"></script>
+
+	<script>
+		$( function () {
+			$( "[id*='$']" ).each( function () {
+				var $this = $( this );
+
+				$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
+			} );
+
+			$( "#toc" ).toc( {
+				anchorName  : function ( i, heading, prefix ) {
+					return $( heading ).attr( "id" ) || ( prefix + i );
+				},
+				selectors   : "h1,h2,h3,h4",
+				showAndHide : false,
+				scrollTo    : "100px"
+			} );
+
+			$( "#toc>ul" ).addClass( "nav nav-pills nav-stacked" );
+			$( "#main span[id^='toc']" ).addClass( "toc-shim" );
+			$( '.dropdown-toggle' ).dropdown();
+//			$( ".tutorial-section pre, .readme-section pre" ).addClass( "sunlight-highlight-javascript" ).addClass( "linenums" );
+
+			$( ".tutorial-section pre, .readme-section pre" ).each( function () {
+				var $this = $( this );
+
+				var example = $this.find( "code" );
+				exampleText = example.html();
+				var lang = /{@lang (.*?)}/.exec( exampleText );
+				if ( lang && lang[1] ) {
+					exampleText = exampleText.replace( lang[0], "" );
+					example.html( exampleText );
+					lang = lang[1];
+				} else {
+					lang = "javascript";
+				}
+
+				if ( lang ) {
+
+					$this
+						.addClass( "sunlight-highlight-" + lang )
+						.addClass( "linenums" )
+						.html( example.html() );
+
+				}
+			} );
+
+			Sunlight.highlightAll( {
+				lineNumbers : true,
+				showMenu : true,
+				enableDoclinks : true
+			} );
+		} );
+	 </script>
+
+
+
+	<!--Navigation and Symbol Display-->
+	
+
+
+	<!--Google Analytics-->
+	
+
+</body>
+</html>
