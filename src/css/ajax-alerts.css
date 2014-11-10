@@ -23,7 +23,9 @@
 
 input[type="text"].input-validation-error,
 input[type="password"].input-validation-error,
+input[type="email"].input-validation-error,
 textarea.input-validation-error,
+textarea.form-control.input-validation-error,
 select.input-validation-error {
     border-color: rgba(232,12,77,.8);
     outline:none;
