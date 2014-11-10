@@ -50,6 +50,7 @@
                     .addClass('alert alert-error fade in')
                     .alert();
             }
+            $.validator.unobtrusive.parse(document);
         },
         /** Removes an element from the DOM after it has been deleted. 
          * @param {object} a - a JSON object returned from the server containing a boolean value
