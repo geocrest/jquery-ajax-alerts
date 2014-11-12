@@ -21,8 +21,8 @@
     </metadata>
     <files>
         <file src="src\css\ajax-alerts.css" target="content\Content\ajax-alerts.css" />
-        <file src="src\css\ajax-alerts.min.css" target="content\Content\ajax-alerts.min.css" />
+        <file src="dist\css\ajax-alerts.min.css" target="content\Content\ajax-alerts.min.css" />
         <file src="src\js\ajax-alerts.js" target="content\Scripts\ajax-alerts.js" />
-        <file src="src\js\ajax-alerts.min.js" target="content\Scripts\ajax-alerts.min.js" />
+        <file src="dist\js\ajax-alerts.min.js" target="content\Scripts\ajax-alerts.min.js" />
     </files>
 </package>

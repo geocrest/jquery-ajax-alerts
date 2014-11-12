@@ -12,7 +12,7 @@ module.exports = function(grunt) {
 				options: {
 					baseUrl: "src/js",
 					name: "ajax-alerts",
-					out: "src/js/ajax-alerts.min.js",
+					out: "dist/js/ajax-alerts.min.js",
 					optimize: "uglify2",
 					preserveLicenseComments: true,
 					paths: {
@@ -21,10 +21,11 @@ module.exports = function(grunt) {
 				}
 			}
 		},
+
 		cssmin: {
 	      single: {
 	        files: {
-	          'src/css/ajax-alerts.min.css': ['src/css/ajax-alerts.css']
+	          'dist/css/ajax-alerts.min.css': ['src/css/ajax-alerts.css']
 	        }
 	      }
 	    }, 

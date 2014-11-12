@@ -1,6 +1,6 @@
 {
   "name": "jquery-ajax-alerts",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Provides some functionality for displaying Bootstrap alert messages when working with jQuery Ajax methods and, in particular, ASP.NET MVC Ajax forms.",
   "main": "src/js/ajax-alerts.js",
   "repository": {
