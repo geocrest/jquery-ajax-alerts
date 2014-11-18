@@ -1,6 +1,6 @@
 {
   "name": "jquery-ajax-alerts",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "homepage": "https://github.com/geocrest/jquery-ajax-alerts",
   "authors": [
     "Geocrest Mapping, LLC"
@@ -29,6 +29,12 @@
     "bower_components",
     "test",
     "tests",
+    "dist/js/build.txt",
+    "jsdoc.conf.json",
     "Geocrest.Web.AjaxAlerts.nuspec"
-  ]
+  ],
+  "dependencies": {
+    "jquery": "~1.9.1",
+    "bootstrap": "~2.3.2"
+  }
 }

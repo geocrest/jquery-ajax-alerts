@@ -1,3 +1,8 @@
+#v1.0.3 (2014-11-17)
+- update build process to support Dojo AMD loader
+- add `alert-danger` to result
+- change file names
+
 #v1.0.2 (2014-11-12)
 - parse validation controls after request completes
 - add error styles for email and textareas (bootstrap 3)

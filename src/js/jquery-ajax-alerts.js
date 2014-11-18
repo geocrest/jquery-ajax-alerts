@@ -1,15 +1,13 @@
-﻿/*! Provides some functionality for displaying Bootstrap alert messages when working with jQuery Ajax methods and, in particular, ASP.NET MVC Ajax forms.
- * 
- * Geocrest.Web.AjaxAlerts v1.0.1 (https://github.com/geocrest/jquery-ajax-alerts)
- * Copyright 2013, 2014 Geocrest Mapping, LLC.
- * Licensed under GPL v2.0 (https://github.com/geocrest/jquery-ajax-alerts/blob/master/LICENSE)
+/* Provides some functionality for displaying Bootstrap alert messages when working with jQuery Ajax methods and, in particular, ASP.NET MVC Ajax forms.
+ *
+ * jquery-ajax-alerts v1.0.3 (https://github.com/geocrest/jquery-ajax-alerts)
+ * Copyright 2013-2014 
+ * Licensed under GPL v2.0 license (https://github.com/geocrest/jquery-ajax-alerts/blob/master/LICENSE)
  *
  */
-(function (root, factory) {
+ (function (root, factory) {
     if (typeof define === 'function' && define.amd) {
-        define(['jquery'], function ($) {
-            root.AjaxAlerts = factory($);
-        });
+        define(['jquery', 'bootstrap'], factory);
     } else {
         root.AjaxAlerts = factory(root.$);
     }
@@ -23,7 +21,7 @@
      */
     var exports =
     {
-        VERSION: '1.0.1',
+        VERSION: '1.0.3',
         /** Displays a success message within an alert
          * @param {object} a - a JSON object returned from the server containing a boolean value
          *  for success, a string value for a message, and the content for the updatetargetid.
@@ -47,7 +45,7 @@
             }
             else {
                 $container.html(addClose() + a.message)
-                    .addClass('alert alert-error fade in')
+                    .addClass('alert alert-error alert-danger fade in')
                     .alert();
             }
             $.validator.unobtrusive.parse(document);
@@ -72,7 +70,7 @@
             }
             else {
                 $container.html(addClose() + a.message)
-                    .addClass('alert alert-error fade in')
+                    .addClass('alert alert-error alert-danger fade in')
                     .alert();
             }
         },
@@ -86,7 +84,7 @@
             var $container = addContainer(ajaxResultElementId);
             $(d).button('reset');
             $container.html(addClose() + c)
-                .addClass('alert alert-error fade in')
+                .addClass('alert alert-error alert-danger fade in')
                 .alert();
         },
         /** Hides all tooltips after the Ajax operation completes.

@@ -1,6 +1,6 @@
 {
   "name": "jquery-ajax-alerts",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Provides some functionality for displaying Bootstrap alert messages when working with jQuery Ajax methods and, in particular, ASP.NET MVC Ajax forms.",
   "main": "src/js/ajax-alerts.js",
   "repository": {
@@ -16,19 +16,26 @@
     "alert"
   ],
   "author": "Geocrest Mapping, LLC",
-  "license": "GPL v2.0",
+  "license": {
+    "type": "GPL v2.0",
+    "url": "https://github.com/geocrest/jquery-ajax-alerts/blob/master/LICENSE"
+  },
   "bugs": {
     "url": "https://github.com/geocrest/jquery-ajax-alerts/issues"
   },
   "homepage": "https://github.com/geocrest/jquery-ajax-alerts",
   "devDependencies": {
     "grunt": "^0.4.5",
+    "grunt-banner": "^0.2.3",
+    "grunt-bump": "0.0.16",
     "grunt-contrib-clean": "^0.6.0",
     "grunt-contrib-cssmin": "^0.10.0",
-    "grunt-contrib-requirejs": "^0.4.4",
+    "grunt-contrib-uglify": "^0.6.0",
     "grunt-jsdoc": "^0.5.7",
     "grunt-nuget": "^0.1.4",
+    "grunt-text-replace": "^0.3.12",
     "ink-docstrap": "^0.4.12",
-    "jsdoc": "^3.3.0-alpha9"
+    "jsdoc": "^3.3.0-alpha9",
+    "load-grunt-tasks": "^1.0.0"
   }
 }
