@@ -1,3 +1,6 @@
+![Bower version](https://img.shields.io/bower/v/jquery-ajax-alerts.svg)
+![Nuget version](https://img.shields.io/nuget/v/geocrest.web.ajaxalerts.svg)
+
 jquery-ajax-alerts
 ================
 
