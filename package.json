@@ -16,10 +16,7 @@
     "alert"
   ],
   "author": "Geocrest Mapping, LLC",
-  "license": {
-    "type": "GPL v2.0",
-    "url": "https://github.com/geocrest/jquery-ajax-alerts/blob/master/LICENSE"
-  },
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/geocrest/jquery-ajax-alerts/issues"
   },

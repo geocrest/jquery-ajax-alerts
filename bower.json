@@ -22,7 +22,7 @@
     "bootstrap",
     "alert"
   ],
-  "license": "GPL v2.0",
+  "license": "MIT",
   "ignore": [
     "**/.*",
     "node_modules",
