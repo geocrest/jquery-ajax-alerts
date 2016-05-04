@@ -7,7 +7,7 @@ module.exports = function(grunt) {
 		banner: '/*! <%= pkg.description %>\n *\n' +
 		' * <%= pkg.name %> v<%= pkg.version %> (<%= pkg.homepage %>)\n' +
 		' * Copyright 2013-<%= grunt.template.today("yyyy") %> <%= pkg.author %>\n' +
-		' * Licensed under <%= pkg.license.type %> (<%= pkg.license.url %>)\n *\n' +
+		' * Licensed under <%= pkg.license %>\n' +
 		' */\n',
 		usebanner: {
 		    dist: {
@@ -59,6 +59,18 @@ module.exports = function(grunt) {
 				}]
 			}
 		},
+		copy: {
+			dist: {
+				files: [
+					{
+							expand: true,
+							cwd: './src', 
+							src: ['css/*', 'js/*'],
+							dest: 'dist/'
+					}
+				]
+			}
+		},
 		cssmin: {
 	      single: {
 	        files: {
@@ -66,19 +78,20 @@ module.exports = function(grunt) {
 	        }
 	      }
 	    }, 
-	    jsdoc: {
-	      dist: {
-	        src: ['./src/js/<%= pkg.name%>.js', './readme.md'],
-	        options: {
-	          destination: './docs',
-	          configure: './jsdoc.conf.json',
-	          template: './node_modules/ink-docstrap/template'
-	        }
-	      }
-	    }, 
-	    clean: {
-	      docs: ['docs']
-	    },
+		jsdoc: {
+			dist: {
+				src: ['./src/js/<%= pkg.name%>.js', './readme.md'],
+				options: {
+					destination: './docs',
+					configure: './jsdoc.conf.json',
+					template: './node_modules/ink-docstrap/template'
+				}
+			}
+		}, 
+		clean: {
+			docs: ['docs'],
+			dist: ['dist']
+		},
 		nugetpack: {
 			dist: {
 				src: 'geocrest.web.ajaxalerts.nuspec',
@@ -90,7 +103,7 @@ module.exports = function(grunt) {
 		}
 	});
 	grunt.registerTask('pack', ['nugetpack']);
-  	grunt.registerTask('doc', ['clean:docs', 'jsdoc']);
-  	grunt.registerTask('build', ['uglify', 'replace', 'cssmin', 'usebanner']);
-	grunt.registerTask('default', ['uglify', 'replace', 'cssmin', 'usebanner', 'clean:docs', 'jsdoc', 'nugetpack']);
+ 	grunt.registerTask('doc', ['clean:docs', 'jsdoc']);
+  grunt.registerTask('build', ['clean:dist', 'uglify', 'replace', 'cssmin', 'copy', 'usebanner']);
+	grunt.registerTask('default', ['clean:dist', 'uglify', 'replace', 'cssmin', 'copy', 'usebanner', 'clean:docs', 'jsdoc', 'nugetpack']);
 }

@@ -11,7 +11,7 @@
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>Provides some functionality for displaying Bootstrap alert messages when working with jQuery Ajax methods and, in particular, ASP.NET MVC Ajax forms.</description>
         <summary>Provides some functionality for displaying Bootstrap alert messages when working with jQuery Ajax methods and, in particular, ASP.NET MVC Ajax forms.</summary>
-        <copyright>Copyright Geocrest Mapping, LLC 2013, 2014</copyright>
+        <copyright>Copyright Geocrest Mapping, LLC 2013-2016</copyright>
         <tags>unobtrusive jquery ajax bootstrap alert</tags>
         <dependencies>
             <dependency id="jQuery" version="1.9.1" />
@@ -20,9 +20,9 @@
         </dependencies>
     </metadata>
     <files>
-        <file src="src\css\jquery-ajax-alerts.css" target="content\Content\jquery-ajax-alerts.css" />
+        <file src="dist\css\jquery-ajax-alerts.css" target="content\Content\jquery-ajax-alerts.css" />
         <file src="dist\css\jquery-ajax-alerts.min.css" target="content\Content\jquery-ajax-alerts.min.css" />
-        <file src="src\js\jquery-ajax-alerts.js" target="content\Scripts\jquery-ajax-alerts.js" />
+        <file src="dist\js\jquery-ajax-alerts.js" target="content\Scripts\jquery-ajax-alerts.js" />
         <file src="dist\js\jquery-ajax-alerts.min.js" target="content\Scripts\jquery-ajax-alerts.min.js" />
     </files>
 </package>

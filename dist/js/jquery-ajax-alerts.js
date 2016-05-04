@@ -1,3 +1,10 @@
+/*! Provides some functionality for displaying Bootstrap alert messages when working with jQuery Ajax methods and, in particular, ASP.NET MVC Ajax forms.
+ *
+ * jquery-ajax-alerts v1.0.3 (https://github.com/geocrest/jquery-ajax-alerts)
+ * Copyright 2013-2016 Geocrest Mapping, LLC
+ * Licensed under MIT
+ */
+
  (function (root, factory) {
     if (typeof define === 'function' && define.amd) {
         define(['jquery', 'bootstrap'], factory);
