@@ -22,17 +22,17 @@
   },
   "homepage": "https://github.com/geocrest/jquery-ajax-alerts",
   "devDependencies": {
-    "grunt": "^0.4.5",
-    "grunt-banner": "^0.2.3",
-    "grunt-bump": "0.0.16",
-    "grunt-contrib-clean": "^0.6.0",
-    "grunt-contrib-cssmin": "^0.10.0",
-    "grunt-contrib-uglify": "^0.6.0",
-    "grunt-jsdoc": "^0.5.7",
-    "grunt-nuget": "^0.1.4",
-    "grunt-text-replace": "^0.3.12",
-    "ink-docstrap": "^0.4.12",
-    "jsdoc": "^3.3.0-alpha9",
-    "load-grunt-tasks": "^1.0.0"
+    "grunt": "~1.0.1",
+    "grunt-banner": "~0.6.0",
+    "grunt-bump": "~0.8.0",
+    "grunt-contrib-clean": "~1.0.0",
+    "grunt-contrib-copy": "~1.0.0",
+    "grunt-contrib-cssmin": "~1.0.1",
+    "grunt-contrib-uglify": "~1.0.1",
+    "grunt-jsdoc": "~2.0.0",
+    "grunt-nuget": "~0.1.5",
+    "grunt-text-replace": "~0.4.0",
+    "ink-docstrap": "~1.1.4",
+    "load-grunt-tasks": "~1.0.0"
   }
 }

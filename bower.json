@@ -34,7 +34,7 @@
     "Geocrest.Web.AjaxAlerts.nuspec"
   ],
   "dependencies": {
-    "jquery": "~1.9.1",
-    "bootstrap": "~2.3.2"
+    "jquery": ">=1.9.1",
+    "bootstrap": ">=2.3.2 <4.0.0-alpha.1"
   }
 }
