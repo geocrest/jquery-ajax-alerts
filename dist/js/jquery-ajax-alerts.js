@@ -1,6 +1,6 @@
 /*! Provides some functionality for displaying Bootstrap alert messages when working with jQuery Ajax methods and, in particular, ASP.NET MVC Ajax forms.
  *
- * jquery-ajax-alerts v1.0.3 (https://github.com/geocrest/jquery-ajax-alerts)
+ * jquery-ajax-alerts v1.1.0 (https://github.com/geocrest/jquery-ajax-alerts)
  * Copyright 2013-2016 Geocrest Mapping, LLC
  * Licensed under MIT
  */
@@ -21,7 +21,7 @@
      */
     var exports =
     {
-        VERSION: '1.0.3',
+        VERSION: '1.1.0',
         /** Displays a success message within an alert
          * @param {object} a - a JSON object returned from the server containing a boolean value
          *  for success, a string value for a message, and the content for the updatetargetid.

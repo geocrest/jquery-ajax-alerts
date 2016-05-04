@@ -14,7 +14,7 @@
      */
     var exports =
     {
-        VERSION: '1.0.3',
+        VERSION: '1.1.0',
         /** Displays a success message within an alert
          * @param {object} a - a JSON object returned from the server containing a boolean value
          *  for success, a string value for a message, and the content for the updatetargetid.
