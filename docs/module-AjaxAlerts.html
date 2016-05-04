@@ -3,6 +3,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
 	<title>jQuery Ajax Alerts Module: AjaxAlerts</title>
 
 	<!--[if lt IE 9]>
@@ -15,53 +16,63 @@
 </head>
 
 <body>
-<div class="container-fluid">
-	<div class="navbar navbar-fixed-top navbar-inverse">
-		<div class="navbar-inner">
-			<a class="brand" href="index.html">jQuery Ajax Alerts</a>
-			<ul class="nav">
-				
-				<li class="dropdown">
-					<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b
-						class="caret"></b></a>
 
-					<ul class="dropdown-menu ">
-						
-						<li>
-							<a href="module-AjaxAlerts.html">AjaxAlerts</a>
-						</li>
-						
-
-					</ul>
-				</li>
-				
-			</ul>
-		</div>
+<div class="navbar navbar-default navbar-fixed-top navbar-inverse">
+<div class="container">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="index.html">jQuery Ajax Alerts</a>
+		<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#topNavigation">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+        </button>
+	</div>
+	<div class="navbar-collapse collapse" id="topNavigation">
+		<ul class="nav navbar-nav">
+			
+			<li class="dropdown">
+				<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="module-AjaxAlerts.html">AjaxAlerts</a></li>
+				</ul>
+			</li>
+			
+		</ul>
+		<div class="col-sm-3 col-md-3">
+            <form class="navbar-form" role="search">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search" name="q" id="search-input">
+                    <div class="input-group-btn">
+                        <button class="btn btn-default" id="search-submit"><i class="glyphicon glyphicon-search"></i></button>
+                    </div>
+                </div>
+            </form>
+        </div>
 	</div>
 
-	<div class="row-fluid">
+</div>
+</div>
 
-		
-		<div class="span8">
+
+<div class="container" id="toc-content">
+<div class="row">
+
+	
+	<div class="col-md-8">
+	
+		<div id="main">
 			
-				<div id="main">
-					
-
 
 	<h1 class="page-title">Module: AjaxAlerts</h1>
 <section>
 
 <header>
-    <h2>
-    AjaxAlerts
-    </h2>
     
 </header>
 
+
 <article>
     <div class="container-overview">
-    
-
     
         
             <div class="description"><p>The global Ajax Alerts object.</p></div>
@@ -69,6 +80,22 @@
 
         
 <dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
 	
 
 	
@@ -79,18 +106,10 @@
 
 	
 
-	
-
-	
-
-	
-
-	
-
 
 
 	
-	<dt class="tag-source">Source:</dt>
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
 	<dd class="tag-source">
 		jquery-ajax-alerts.js
 	</dd>
@@ -125,13 +144,14 @@
 
         <dl>
             
+<hr>
 <dt>
-    <h4 class="name" id="onBegin"><span class="type-signature">&lt;static> </span>onBegin<span class="signature">(a, b)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id=".onBegin"><span class="type-signature">&lt;static> </span>onBegin(a, b)</h4>
     
     
 </dt>
 <dd>
-    
+
     
     <div class="description">
         <p>Sets the button with the specified selector to a loading state.</p>
@@ -139,8 +159,9 @@
     
 
     
+
     
-    
+
     
     
         <h5>Parameters:</h5>
@@ -148,23 +169,23 @@
 
 <table class="params table table-striped">
     <thead>
-	<tr>
-		
-		<th>Name</th>
-		
+    <tr>
+        
+        <th>Name</th>
+        
 
-		<th>Type</th>
+        <th>Type</th>
 
-		
+        
 
-		
+        
 
-		<th class="last">Description</th>
-	</tr>
-	</thead>
+        <th class="last">Description</th>
+    </tr>
+    </thead>
 
-	<tbody>
-	
+    <tbody>
+    
 
         <tr>
             
@@ -177,6 +198,7 @@
 <span class="param-type">object</span>
 
 
+
             
             </td>
 
@@ -187,7 +209,7 @@
             <td class="description last"><p>the XMLHttpRequest object.</p></td>
         </tr>
 
-	
+    
 
         <tr>
             
@@ -198,6 +220,7 @@
             
                 
 <span class="param-type">string</span>
+
 
 
             
@@ -210,14 +233,30 @@
             <td class="description last"><p>the jQuery selector of the button element.</p></td>
         </tr>
 
-	
-	</tbody>
+    
+    </tbody>
 </table>
 
     
-    
+
     
 <dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
 	
 
 	
@@ -228,18 +267,10 @@
 
 	
 
-	
-
-	
-
-	
-
-	
-
 
 
 	
-	<dt class="tag-source">Source:</dt>
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
 	<dd class="tag-source">
 		jquery-ajax-alerts.js
 	</dd>
@@ -252,29 +283,32 @@
 	
 </dl>
 
+
     
+
     
 
     
 
     
+
     
+
     
-    
-    
-    
+
     
 </dd>
 
         
             
+<hr>
 <dt>
-    <h4 class="name" id="onComplete"><span class="type-signature">&lt;static> </span>onComplete<span class="signature">(a, b)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id=".onComplete"><span class="type-signature">&lt;static> </span>onComplete(a, b)</h4>
     
     
 </dt>
 <dd>
-    
+
     
     <div class="description">
         <p>Hides all tooltips after the Ajax operation completes.</p>
@@ -282,8 +316,9 @@
     
 
     
+
     
-    
+
     
     
         <h5>Parameters:</h5>
@@ -291,23 +326,23 @@
 
 <table class="params table table-striped">
     <thead>
-	<tr>
-		
-		<th>Name</th>
-		
+    <tr>
+        
+        <th>Name</th>
+        
 
-		<th>Type</th>
+        <th>Type</th>
 
-		
+        
 
-		
+        
 
-		<th class="last">Description</th>
-	</tr>
-	</thead>
+        <th class="last">Description</th>
+    </tr>
+    </thead>
 
-	<tbody>
-	
+    <tbody>
+    
 
         <tr>
             
@@ -318,6 +353,7 @@
             
                 
 <span class="param-type">object</span>
+
 
 
             
@@ -330,7 +366,7 @@
             <td class="description last"><p>the XMLHttpRequest object.</p></td>
         </tr>
 
-	
+    
 
         <tr>
             
@@ -341,6 +377,7 @@
             
                 
 <span class="param-type">string</span>
+
 
 
             
@@ -353,14 +390,30 @@
             <td class="description last"><p>the status of the request.</p></td>
         </tr>
 
-	
-	</tbody>
+    
+    </tbody>
 </table>
 
     
-    
+
     
 <dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
 	
 
 	
@@ -371,18 +424,10 @@
 
 	
 
-	
-
-	
-
-	
-
-	
-
 
 
 	
-	<dt class="tag-source">Source:</dt>
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
 	<dd class="tag-source">
 		jquery-ajax-alerts.js
 	</dd>
@@ -395,29 +440,32 @@
 	
 </dl>
 
+
     
+
     
 
     
 
     
+
     
+
     
-    
-    
-    
+
     
 </dd>
 
         
             
+<hr>
 <dt>
-    <h4 class="name" id="onDelete"><span class="type-signature">&lt;static> </span>onDelete<span class="signature">(a, b)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id=".onDelete"><span class="type-signature">&lt;static> </span>onDelete(a, b)</h4>
     
     
 </dt>
 <dd>
-    
+
     
     <div class="description">
         <p>Removes an element from the DOM after it has been deleted.</p>
@@ -425,8 +473,9 @@
     
 
     
+
     
-    
+
     
     
         <h5>Parameters:</h5>
@@ -434,23 +483,23 @@
 
 <table class="params table table-striped">
     <thead>
-	<tr>
-		
-		<th>Name</th>
-		
+    <tr>
+        
+        <th>Name</th>
+        
 
-		<th>Type</th>
+        <th>Type</th>
 
-		
+        
 
-		
+        
 
-		<th class="last">Description</th>
-	</tr>
-	</thead>
+        <th class="last">Description</th>
+    </tr>
+    </thead>
 
-	<tbody>
-	
+    <tbody>
+    
 
         <tr>
             
@@ -463,6 +512,7 @@
 <span class="param-type">object</span>
 
 
+
             
             </td>
 
@@ -470,12 +520,13 @@
 
             
 
-            <td class="description last"><p>a JSON object returned from the server containing a boolean value
-for success, a string value for message, and the id of the object deleted.
-<em> It is up to you to return this object from your controller! </em></p></td>
+            <td class="description last"><p>a JSON object returned from the server containing a boolean value<br>for success, a string value for message, and the id of the object deleted.</p>
+<ul>
+<li>It is up to you to return this object from your controller! *</li>
+</ul></td>
         </tr>
 
-	
+    
 
         <tr>
             
@@ -486,6 +537,7 @@ for success, a string value for message, and the id of the object deleted.
             
                 
 <span class="param-type">string</span>
+
 
 
             
@@ -498,14 +550,30 @@ for success, a string value for message, and the id of the object deleted.
             <td class="description last"><p>the jQuery selector of the element to remove from display (e.g. '#row3').</p></td>
         </tr>
 
-	
-	</tbody>
+    
+    </tbody>
 </table>
 
     
-    
+
     
 <dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
 	
 
 	
@@ -516,18 +584,10 @@ for success, a string value for message, and the id of the object deleted.
 
 	
 
-	
-
-	
-
-	
-
-	
-
 
 
 	
-	<dt class="tag-source">Source:</dt>
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
 	<dd class="tag-source">
 		jquery-ajax-alerts.js
 	</dd>
@@ -540,29 +600,32 @@ for success, a string value for message, and the id of the object deleted.
 	
 </dl>
 
+
     
+
     
 
     
 
     
+
     
+
     
-    
-    
-    
+
     
 </dd>
 
         
             
+<hr>
 <dt>
-    <h4 class="name" id="onFailure"><span class="type-signature">&lt;static> </span>onFailure<span class="signature">(a, b, c, d)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id=".onFailure"><span class="type-signature">&lt;static> </span>onFailure(a, b, c, d)</h4>
     
     
 </dt>
 <dd>
-    
+
     
     <div class="description">
         <p>Displays an alert with a failure message.</p>
@@ -570,8 +633,9 @@ for success, a string value for message, and the id of the object deleted.
     
 
     
+
     
-    
+
     
     
         <h5>Parameters:</h5>
@@ -579,23 +643,23 @@ for success, a string value for message, and the id of the object deleted.
 
 <table class="params table table-striped">
     <thead>
-	<tr>
-		
-		<th>Name</th>
-		
+    <tr>
+        
+        <th>Name</th>
+        
 
-		<th>Type</th>
+        <th>Type</th>
 
-		
+        
 
-		
+        
 
-		<th class="last">Description</th>
-	</tr>
-	</thead>
+        <th class="last">Description</th>
+    </tr>
+    </thead>
 
-	<tbody>
-	
+    <tbody>
+    
 
         <tr>
             
@@ -606,6 +670,7 @@ for success, a string value for message, and the id of the object deleted.
             
                 
 <span class="param-type">object</span>
+
 
 
             
@@ -618,7 +683,7 @@ for success, a string value for message, and the id of the object deleted.
             <td class="description last"><p>the XMLHttpRequest object</p></td>
         </tr>
 
-	
+    
 
         <tr>
             
@@ -631,6 +696,7 @@ for success, a string value for message, and the id of the object deleted.
 <span class="param-type">string</span>
 
 
+
             
             </td>
 
@@ -641,7 +707,7 @@ for success, a string value for message, and the id of the object deleted.
             <td class="description last"><p>a string describing the type of error</p></td>
         </tr>
 
-	
+    
 
         <tr>
             
@@ -654,6 +720,7 @@ for success, a string value for message, and the id of the object deleted.
 <span class="param-type">string</span>
 
 
+
             
             </td>
 
@@ -664,7 +731,7 @@ for success, a string value for message, and the id of the object deleted.
             <td class="description last"><p>the text portion of an Http error</p></td>
         </tr>
 
-	
+    
 
         <tr>
             
@@ -677,6 +744,7 @@ for success, a string value for message, and the id of the object deleted.
 <span class="param-type">string</span>
 
 
+
             
             </td>
 
@@ -687,14 +755,30 @@ for success, a string value for message, and the id of the object deleted.
             <td class="description last"><p>the jQuery selector of the submit button element.</p></td>
         </tr>
 
-	
-	</tbody>
+    
+    </tbody>
 </table>
 
     
-    
+
     
 <dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
 	
 
 	
@@ -705,18 +789,10 @@ for success, a string value for message, and the id of the object deleted.
 
 	
 
-	
-
-	
-
-	
-
-	
-
 
 
 	
-	<dt class="tag-source">Source:</dt>
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
 	<dd class="tag-source">
 		jquery-ajax-alerts.js
 	</dd>
@@ -729,29 +805,32 @@ for success, a string value for message, and the id of the object deleted.
 	
 </dl>
 
+
     
+
     
 
     
 
     
+
     
+
     
-    
-    
-    
+
     
 </dd>
 
         
             
+<hr>
 <dt>
-    <h4 class="name" id="onSuccess"><span class="type-signature">&lt;static> </span>onSuccess<span class="signature">(a, <span class="optional">b</span>, <span class="optional">c</span>, <span class="optional">d</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id=".onSuccess"><span class="type-signature">&lt;static> </span>onSuccess(a, <span class="optional">b</span>, <span class="optional">c</span>, <span class="optional">d</span>)</h4>
     
     
 </dt>
 <dd>
-    
+
     
     <div class="description">
         <p>Displays a success message within an alert</p>
@@ -759,8 +838,9 @@ for success, a string value for message, and the id of the object deleted.
     
 
     
+
     
-    
+
     
     
         <h5>Parameters:</h5>
@@ -768,25 +848,25 @@ for success, a string value for message, and the id of the object deleted.
 
 <table class="params table table-striped">
     <thead>
-	<tr>
-		
-		<th>Name</th>
-		
+    <tr>
+        
+        <th>Name</th>
+        
 
-		<th>Type</th>
+        <th>Type</th>
 
-		
-		<th>Argument</th>
-		
+        
+        <th>Argument</th>
+        
 
-		
+        
 
-		<th class="last">Description</th>
-	</tr>
-	</thead>
+        <th class="last">Description</th>
+    </tr>
+    </thead>
 
-	<tbody>
-	
+    <tbody>
+    
 
         <tr>
             
@@ -797,6 +877,7 @@ for success, a string value for message, and the id of the object deleted.
             
                 
 <span class="param-type">object</span>
+
 
 
             
@@ -814,12 +895,13 @@ for success, a string value for message, and the id of the object deleted.
 
             
 
-            <td class="description last"><p>a JSON object returned from the server containing a boolean value
- for success, a string value for a message, and the content for the updatetargetid.
- <em> It is up to you to return this object from your controller! </em></p></td>
+            <td class="description last"><p>a JSON object returned from the server containing a boolean value<br> for success, a string value for a message, and the content for the updatetargetid.</p>
+<ul>
+<li>It is up to you to return this object from your controller! *</li>
+</ul></td>
         </tr>
 
-	
+    
 
         <tr>
             
@@ -830,6 +912,7 @@ for success, a string value for message, and the id of the object deleted.
             
                 
 <span class="param-type">string</span>
+
 
 
             
@@ -852,7 +935,7 @@ for success, a string value for message, and the id of the object deleted.
             <td class="description last"><p>the jQuery selector of the element to receive the updated content (i.e. updatetargetid).</p></td>
         </tr>
 
-	
+    
 
         <tr>
             
@@ -863,6 +946,7 @@ for success, a string value for message, and the id of the object deleted.
             
                 
 <span class="param-type">string</span>
+
 
 
             
@@ -885,7 +969,7 @@ for success, a string value for message, and the id of the object deleted.
             <td class="description last"><p>the jQuery Selector of the modal displaying the content.</p></td>
         </tr>
 
-	
+    
 
         <tr>
             
@@ -896,6 +980,7 @@ for success, a string value for message, and the id of the object deleted.
             
                 
 <span class="param-type">string</span>
+
 
 
             
@@ -918,14 +1003,30 @@ for success, a string value for message, and the id of the object deleted.
             <td class="description last"><p>the jQuery selector of the submit button element.</p></td>
         </tr>
 
-	
-	</tbody>
+    
+    </tbody>
 </table>
 
     
-    
+
     
 <dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
 	
 
 	
@@ -936,18 +1037,10 @@ for success, a string value for message, and the id of the object deleted.
 
 	
 
-	
-
-	
-
-	
-
-	
-
 
 
 	
-	<dt class="tag-source">Source:</dt>
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
 	<dd class="tag-source">
 		jquery-ajax-alerts.js
 	</dd>
@@ -960,17 +1053,19 @@ for success, a string value for message, and the id of the object deleted.
 	
 </dl>
 
+
     
+
     
 
     
 
     
+
     
+
     
-    
-    
-    
+
     
 </dd>
 
@@ -987,101 +1082,131 @@ for success, a string value for message, and the id of the object deleted.
 
 
 
-				</div>
-
-				<div class="clearfix"></div>
-				<footer>
-					
-					
-		<span class="copyright">
-		Geocrest Mapping, LLC
-		</span>
-					<br />
-					
-		<span class="jsdoc-message">
-		Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a>
-		on Mon Nov 17th 2014 using the <a
-			href="https://github.com/terryweiss/docstrap">DocStrap template</a>.
-		</span>
-				</footer>
-			</div>
-
-			
-			<div class="span3">
-				<div id="toc"></div>
-			</div>
-			
-			<br clear="both">
 		</div>
-
 	</div>
-	<!--<script src="scripts/sunlight.js"></script>-->
-	<script src="scripts/docstrap.lib.js"></script>
-	<script src="scripts/bootstrap-dropdown.js"></script>
-	<script src="scripts/toc.js"></script>
 
-	<script>
-		$( function () {
-			$( "[id*='$']" ).each( function () {
-				var $this = $( this );
+	<div class="clearfix"></div>
 
-				$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
-			} );
-
-			$( "#toc" ).toc( {
-				anchorName  : function ( i, heading, prefix ) {
-					return $( heading ).attr( "id" ) || ( prefix + i );
-				},
-				selectors   : "h1,h2,h3,h4",
-				showAndHide : false,
-				scrollTo    : "100px"
-			} );
-
-			$( "#toc>ul" ).addClass( "nav nav-pills nav-stacked" );
-			$( "#main span[id^='toc']" ).addClass( "toc-shim" );
-			$( '.dropdown-toggle' ).dropdown();
-//			$( ".tutorial-section pre, .readme-section pre" ).addClass( "sunlight-highlight-javascript" ).addClass( "linenums" );
-
-			$( ".tutorial-section pre, .readme-section pre" ).each( function () {
-				var $this = $( this );
-
-				var example = $this.find( "code" );
-				exampleText = example.html();
-				var lang = /{@lang (.*?)}/.exec( exampleText );
-				if ( lang && lang[1] ) {
-					exampleText = exampleText.replace( lang[0], "" );
-					example.html( exampleText );
-					lang = lang[1];
-				} else {
-					lang = "javascript";
-				}
-
-				if ( lang ) {
-
-					$this
-						.addClass( "sunlight-highlight-" + lang )
-						.addClass( "linenums" )
-						.html( example.html() );
-
-				}
-			} );
-
-			Sunlight.highlightAll( {
-				lineNumbers : true,
-				showMenu : true,
-				enableDoclinks : true
-			} );
-		} );
-	 </script>
-
-
-
-	<!--Navigation and Symbol Display-->
+	
+		<div class="col-md-3">
+			<div id="toc" class="col-md-3 hidden-xs hidden-sm hidden-md"></div>
+		</div>
 	
 
+</div>
+</div>
 
-	<!--Google Analytics-->
+<div class="modal fade" id="searchResults">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Search results</h4>
+      </div>
+      <div class="modal-body"></div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div>
+
+<footer>
+
+
+	<span class="copyright">
+	Geocrest Mapping, LLC
+	</span>
+
+<span class="jsdoc-message">
+	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a>
 	
+		on Tue May 3rd 2016
+	
+	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
+</span>
+</footer>
+
+<script src="scripts/docstrap.lib.js"></script>
+<script src="scripts/toc.js"></script>
+<script type="text/javascript" src="scripts/fulltext-search-ui.js"></script>
+
+<script>
+$( function () {
+	$( "[id*='$']" ).each( function () {
+		var $this = $( this );
+
+		$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
+	} );
+
+	$( ".tutorial-section pre, .readme-section pre" ).each( function () {
+		var $this = $( this );
+
+		var example = $this.find( "code" );
+		exampleText = example.html();
+		var lang = /{@lang (.*?)}/.exec( exampleText );
+		if ( lang && lang[1] ) {
+			exampleText = exampleText.replace( lang[0], "" );
+			example.html( exampleText );
+			lang = lang[1];
+		} else {
+			var langClassMatch = example.parent()[0].className.match(/lang\-(\S+)/);
+			lang = langClassMatch ? langClassMatch[1] : "javascript";
+		}
+
+		if ( lang ) {
+
+			$this
+			.addClass( "sunlight-highlight-" + lang )
+			.addClass( "linenums" )
+			.html( example.html() );
+
+		}
+	} );
+
+	Sunlight.highlightAll( {
+		lineNumbers : true,
+		showMenu : true,
+		enableDoclinks : true
+	} );
+
+	$.catchAnchorLinks( {
+        navbarOffset: 10
+	} );
+	$( "#toc" ).toc( {
+		anchorName  : function ( i, heading, prefix ) {
+			var id = $( heading ).attr( "id" );
+			return id && id.replace(/\~/g, '-inner-').replace(/\./g, '-static-') || ( prefix + i );
+		},
+		selectors   : "#toc-content h1,#toc-content h2,#toc-content h3,#toc-content h4",
+		showAndHide : false,
+		smoothScrolling: true
+	} );
+
+	$( "#main span[id^='toc']" ).addClass( "toc-shim" );
+	$( '.dropdown-toggle' ).dropdown();
+
+    $( "table" ).each( function () {
+      var $this = $( this );
+      $this.addClass('table');
+    } );
+
+} );
+</script>
+
+
+
+<!--Navigation and Symbol Display-->
+
+
+<!--Google Analytics-->
+
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		SearcherDisplay.init();
+	});
+</script>
 
 </body>
 </html>
