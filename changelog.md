@@ -1,3 +1,9 @@
+#v1.1.0 (2016-05-04)
+- Switch to MIT license
+- Include unminified files in distribution
+- Update dependencies
+- Update docs
+
 #v1.0.3 (2014-11-17)
 - update build process to support Dojo AMD loader
 - add `alert-danger` to result
