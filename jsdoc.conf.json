@@ -17,13 +17,14 @@
 		"outputSourcePath"      : true,
 		"systemName"            : "jQuery Ajax Alerts",
 		"footer"                : "",
-		"copyright"             : "Geocrest Mapping, LLC",
+		"copyright"             : "Geocrest Mapping, LLC 2013-2016",
 		"navType"               : "vertical",
 		"theme"                 : "cosmo",
 		"linenums"              : true,
 		"collapseSymbols"       : false,
 		"inverseNav"            : true,
 		"highlightTutorialCode" : true,
+		"includeDate": false,
 		"protocol": "fred://"
 	},
 	"markdown"  : {
