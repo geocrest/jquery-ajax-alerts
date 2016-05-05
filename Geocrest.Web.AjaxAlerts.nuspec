@@ -8,6 +8,7 @@
         <owners>Geocrest Mapping, LLC</owners>
         <projectUrl>https://github.com/geocrest/jquery-ajax-alerts</projectUrl>
         <iconUrl>http://www.geocrest.co/content/themes/geocrest/img/icon.png</iconUrl>
+        <licenseUrl>https://github.com/geocrest/jquery-ajax-alerts/blob/master/LICENSE</licenseUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>Provides some functionality for displaying Bootstrap alert messages when working with jQuery Ajax methods and, in particular, ASP.NET MVC Ajax forms.</description>
         <summary>Provides some functionality for displaying Bootstrap alert messages when working with jQuery Ajax methods and, in particular, ASP.NET MVC Ajax forms.</summary>
